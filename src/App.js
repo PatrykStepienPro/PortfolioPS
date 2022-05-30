@@ -1,10 +1,14 @@
 import logo from './logo.svg';
 import './App.css';
+import Navbar from './component/Navbar';
+import AboutMe from './component/AboutMe'
 
 function App() {
   return (
     <div className="App">
+      <Navbar/>
       <header className="App-header">
+        <AboutMe/>
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.js</code> and save to reload.
@@ -17,6 +21,8 @@ function App() {
         >
           Learn React
         </a>
+        <button className='btn btn-primary'>Test</button>
+        <AboutMe/>
       </header>
     </div>
   );

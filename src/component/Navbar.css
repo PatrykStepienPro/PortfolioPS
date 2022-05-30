@@ -1,0 +1,41 @@
+.bark-groud-dark {
+  background-color: black;
+}
+
+.navbar {
+  position: fixed !important;
+  top: 0px;
+  width: 100%;
+}
+
+.nav-link{
+    color: white !important;
+    font-size: 28px;
+}
+
+
+.intro-2 {
+    background: url("https://cdn-media-2.freecodecamp.org/w1280/5f9c9d0a740569d1a4ca3590.jpg")no-repeat center center;
+    background-size: cover;
+    height: 500px !important;
+}
+
+.navbar {
+    background-color: transparent;
+}
+
+.top-nav-collapse {
+    background-color: #4285F4;
+}
+
+@media only screen and (max-width: 768px) {
+    .navbar {
+        background-color: #4285F4;
+    }
+}
+html,
+body,
+header,
+.view {
+    height: 100%;
+}
