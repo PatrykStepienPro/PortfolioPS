@@ -3,7 +3,7 @@ import "./AboutMe.css";
 export default function () {
   return (
     <>
-      <div id="AboutMe">
+      <div id="AboutMe" class="container-md mx-4 mt-5">
         <h2>Lorem Ipsum</h2>
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras nec
