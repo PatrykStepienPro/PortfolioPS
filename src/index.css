@@ -12,6 +12,24 @@ code {
     monospace;
 }
 
-p {
-  font-size: 18px;
+.color-font-white{
+  color: white;
+}
+
+
+@media only screen and (max-width: 600px) {
+  h1 {
+    font-size: 36px !important;
+  }
+  p{
+    font: 16px;
+  }
+}
+@media only screen and (min-width: 600px) {
+  h1 {
+    font-size: 60px !important;
+  }
+  p{
+    font: 18px;
+  }
 }
