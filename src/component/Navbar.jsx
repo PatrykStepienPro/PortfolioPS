@@ -49,7 +49,7 @@ export default function Navbar() {
           <div className="full-bg-img">
             <div className="mask rgba-purple-light flex-center">
               <div className="container text-center white-text wow fadeInUp">
-                <h2>This Navbar is fixed and transparent</h2>
+
               </div>
             </div>
           </div>

@@ -19,7 +19,7 @@ export default function Hobby() {
     }
 
   return (
-    <div className="section-component background-dark">
+    <div className="section-component background-dark pb-5">
       <div
         id="Hobby"
         className="container-md mx-4 mt-5 d-flex justify-content-center"

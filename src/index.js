@@ -7,6 +7,7 @@ import reportWebVitals from "./reportWebVitals";
 import "bootstrap/dist/css/bootstrap.css";
 import 'jquery/dist/jquery.min.js';
 import 'bootstrap/dist/js/bootstrap.min.js';
+import '@fortawesome/fontawesome-free/css/all.min.css';
 //import 'https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js';
 
 const root = ReactDOM.createRoot(document.getElementById("root"));

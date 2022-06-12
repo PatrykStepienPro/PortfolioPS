@@ -3,6 +3,7 @@ import "./App.css";
 import Navbar from "./component/Navbar";
 import AboutMe from "./component/AboutMe";
 import Hobby from "./component/Hobby";
+import Contact from './component/Contact'
 
 function App() {
   return (
@@ -11,7 +12,7 @@ function App() {
       <div className="App-header">
         <AboutMe/>
         <Hobby/>
-        <button className="btn btn-primary">Test</button>
+        <Contact/>
       </div>
     </div>
   );

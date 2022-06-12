@@ -33,3 +33,8 @@ code {
     font: 18px;
   }
 }
+
+:root{
+  --font-color-gray: #DCDCDC;
+  --secondary-color-detal: purple;
+}

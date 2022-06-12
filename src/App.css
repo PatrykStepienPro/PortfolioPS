@@ -37,8 +37,11 @@
 
 .section-component{
   width: 100%;
-  margin-bottom: 40px;
-  padding-bottom: 20px;
+  margin-top: 40px;
   display: flex;
   justify-content: center;
+}
+
+.row-full-width{
+  width: 100%;
 }
