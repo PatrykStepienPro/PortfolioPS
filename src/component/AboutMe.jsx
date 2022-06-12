@@ -72,12 +72,12 @@ export default function AboutMe() {
   }
 
   return (
-    <>
+    <div className="section-component">
       <div id="AboutMe" className="container-md mx-4 mt-5">
         <div className="row">
           <div className="col-lg-5">
             <img
-              src={require("./myPhoto.jpg")}
+              src={require("../images/myPhoto.jpg")}
               alt="My photo"
               className="image my-image"
             ></img>
@@ -122,6 +122,6 @@ export default function AboutMe() {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 }
