@@ -48,7 +48,13 @@ header,
   height: 100%;
 }
 
-
+.button-transparent {
+  background-color: Transparent;
+  cursor:pointer;
+}
+.icon-white {
+  color: white;
+}
 
 
 @media only screen and (min-width: 992px) {

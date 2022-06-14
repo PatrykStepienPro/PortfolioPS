@@ -1,8 +1,9 @@
 import "./Hobby.css";
 import $ from "jquery";
+import { useTranslation } from "react-i18next";
 
 export default function Hobby() {
-
+  const { t } = useTranslation();
     function onCardOver(elemId){
         var elem = (document).getElementById(elemId);
         var width = $(elem).width();
@@ -27,13 +28,12 @@ export default function Hobby() {
         <div className="row">
           <div className="col-12">
             <h1 className="color-font-white text-center">
-              <b>Hobby</b>
+              <b>{t('hobby')}</b>
             </h1>
           </div>
           <div className="col-12">
             <p className="text-center">
-              Co robie w wolnym czasie? Lubie spędzać czas wolny aktywnie i
-              narzucać sobie nowe wyzwania.
+              {t('hobby_header')}
             </p>
           </div>
 
@@ -47,8 +47,7 @@ export default function Hobby() {
                 ></img>
                 <h4 className="card-title">Muay Thai</h4>
                 <p className="card-text">
-                  Some quick example text to build on the card title and make up
-                  the bulk of the card's content.
+                  {t('muay_thai_content')}
                 </p>
               </div>
             </div>
@@ -61,10 +60,9 @@ export default function Hobby() {
                   alt="Run image"
                   className="card-img-top"
                 ></img>
-                <h4 className="card-title">Bieganie</h4>
+                <h4 className="card-title">{t('running')}</h4>
                 <p className="card-text">
-                  Some quick example text to build on the card title and make up
-                  the bulk of the card's content.
+                  {t('running_content')}
                 </p>
               </div>
             </div>
@@ -77,10 +75,9 @@ export default function Hobby() {
                   alt="Run image"
                   className="card-img-top"
                 ></img>
-                <h4 className="card-title">Ścianka wspinaczkowa</h4>
+                <h4 className="card-title">{t('climbing')}</h4>
                 <p className="card-text">
-                  Some quick example text to build on the card title and make up
-                  the bulk of the card's content.
+                  {t('climbing_content')}
                 </p>
               </div>
             </div>

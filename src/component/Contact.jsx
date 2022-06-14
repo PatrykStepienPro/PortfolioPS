@@ -1,7 +1,9 @@
 import "./Contact.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { useTranslation } from "react-i18next";
 
 export default function Contact() {
+  const { t } = useTranslation();
   return (
     <div className="section-component">
       <div className="row row-full-width">
@@ -13,7 +15,7 @@ export default function Contact() {
             <div className="row row-full-width">
               <div className="col-12">
                 <h1 className="color-font-white text-center d-flex justify-content-center">
-                  <b>Contact</b>
+                  <b>{t('contact')}</b>
                 </h1>
                 <div className="col-6">
                   <form>
@@ -22,12 +24,12 @@ export default function Contact() {
                         htmlFor="name"
                         className="form-label input-contact-label"
                       >
-                        Twoje imie *
+                        {t('label_name')} *
                       </label>
                       <input
                         className="form-control"
                         type="text"
-                        placeholder="Imie"
+                        placeholder={`${t('placeholder_name')}`}
                         id="name"
                       />
                     </div>
@@ -36,12 +38,12 @@ export default function Contact() {
                         htmlFor="email"
                         className="form-label input-contact-label"
                       >
-                        Twój adres email *
+                        {t('label_email')} *
                       </label>
                       <input
                         className="form-control"
                         type="text"
-                        placeholder="Email"
+                        placeholder={`${t('placeholder_email')}`}
                         id="email"
                       />
                     </div>
@@ -50,12 +52,12 @@ export default function Contact() {
                         htmlFor="subject"
                         className="form-label input-contact-label"
                       >
-                        Temat *
+                        {t('label_subject')} *
                       </label>
                       <input
                         className="form-control"
                         type="text"
-                        placeholder="Temat"
+                        placeholder={`${t('placeholder_subject')}`}
                         id="subject"
                       />
                     </div>
@@ -64,7 +66,7 @@ export default function Contact() {
                         htmlFor="content"
                         className="form-label input-contact-label"
                       >
-                        Treść *
+                        {t('label_content')} *
                       </label>
                       <textarea
                         className="form-control"
