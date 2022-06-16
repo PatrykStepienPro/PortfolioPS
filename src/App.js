@@ -3,7 +3,8 @@ import "./App.css";
 import Navbar from "./component/Navbar";
 import AboutMe from "./component/AboutMe";
 import Hobby from "./component/Hobby";
-import Contact from './component/Contact'
+import Contact from './component/Contact';
+import React  from 'react';
 
 function App() {
   return (

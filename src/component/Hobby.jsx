@@ -1,4 +1,5 @@
 import "./Hobby.css";
+import React, { Component }  from 'react';
 import $ from "jquery";
 import { useTranslation } from "react-i18next";
 
