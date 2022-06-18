@@ -4,6 +4,7 @@ const mg = require('mailgun-js');
 const { PureComponent } = require('react');
 "use strict";
 const nodemailer = require("nodemailer");
+const path = require("path");
 
 async function main(){
     dotnev.config();
@@ -49,10 +50,14 @@ async function main(){
     });
     
     
+    app.use(express.static(path.join(__dirname, '/client/build')));
+
     const port = process.env.PORT || 4000;
     app.listen(port, () => {
         console.log(`serve at http://localhost:${port}`);
     });
+
+
 }
 
 main();
