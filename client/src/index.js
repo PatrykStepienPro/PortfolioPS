@@ -7,7 +7,7 @@ import reportWebVitals from "./reportWebVitals";
 import "bootstrap/dist/css/bootstrap.css";
 import 'jquery/dist/jquery.min.js';
 import 'bootstrap/dist/js/bootstrap.min.js';
-import '@fortawesome/fontawesome-free/css/all.min.css';
+import '~@fortawesome/fontawesome-free/css/all.min.css';
 import 'flag-icon-css/css/flag-icons.min.css';
 //import 'https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js';
 import i18n from "i18next";
