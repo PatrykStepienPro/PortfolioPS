@@ -24,6 +24,9 @@ const transporter = nodemailer.createTransport({
 });
 
 const app = express();
+app.get('/test', (req, res) => {
+    res.send('Hello World!')
+  })
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
