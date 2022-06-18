@@ -6,20 +6,6 @@ const { PureComponent } = require("react");
 const nodemailer = require("nodemailer");
 
 
-//let testAccount = await nodemailer.createTestAccount();
-const transporter = nodemailer.createTransport({
-  host: "smtp-mail.outlook.com",
-  service: "outlook", // service name
-  secureConnection: false,
-  tls: {
-    ciphers: "SSLv3", // tls version
-  },
-  port: 587,
-  auth: {
-    user: process.env.MAILER_USER, // generated ethereal user
-    pass: process.env.MAILER_PASSWORD, // generated ethereal password
-  },
-});
 
 const app = express();
 
@@ -36,10 +22,18 @@ app.get('/test', (req, res) => {
   })
 
 app.post("/api/emial", (req, res) => {
-  const { name, email, subject, message } = req.body;
   try {
+    const transporter = nodemailer.createTransport({
+      service: `hotmail`,
+      auth: {
+        user: process.env.MAILER_USER, // generated ethereal user
+        pass: process.env.MAILER_PASSWORD, // generated ethereal password
+      },
+    });
+
+    const { name, email, subject, message } = req.body;
     let info = transporter.sendMail({
-      from: '"Portfolio" <portfolioSenderPS@outlook.com>',
+      from: process.env.MAILER_USER,
       to: "patrykl655@wp.pl", // list of receivers
       subject: `${subject}`, // Subject line
       text: `${message}`, // plain text body
@@ -49,7 +43,6 @@ app.post("/api/emial", (req, res) => {
     if (error) {
       console.log(error);
       res.status(500).send({ message: "Error in sending email" });
-      return;
     }
   }
   console.log(`${name} ${email} ${subject} ${message}`);
