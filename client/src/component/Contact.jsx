@@ -118,7 +118,7 @@ export default function Contact() {
                       ></textarea>
                     </div>
                     <div className="float-end mb-3">
-                    <button type="submit" className="btn btn-primary btn-lg" disabled={loading}>{loading ? 'Sending...' : 'Submit'}</button>
+                    <button type="submit" className="btn btn-primary btn-lg" disabled={loading}>{loading ? t('formButtonSending') : t('formButtonSend')}</button>
                     </div>
                   </form>
                 </div>
