@@ -5,6 +5,7 @@ const { PureComponent } = require("react");
 ("use strict");
 const nodemailer = require("nodemailer");
 const path = require("path");
+const bodyParser = require('body-parser');
 
 dotnev.config();
 
@@ -24,11 +25,14 @@ const transporter = nodemailer.createTransport({
 });
 
 const app = express();
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+const cors = require('cors');
+app.use(cors());
+
 app.get('/test', (req, res) => {
     res.send('Hello World!')
   })
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
 
 app.post("/api/emial", (req, res) => {
   const { name, email, subject, message } = req.body;
