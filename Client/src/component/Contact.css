@@ -1,0 +1,27 @@
+.input-contact-label{
+    font-size: 24px;
+}
+
+input[type="text"]
+{
+    background: transparent;
+}
+textarea{
+    background: transparent !important;
+}
+.form-control{
+    font-size: 1.3rem !important;
+    color: var(--font-color-gray) !important;
+}
+
+.form-control:focus{
+    background: transparent !important;
+    border-color: var(--secondary-color-detal) !important;
+}
+.footer-content{
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.iconPrimaryColor{
+    color: var(--secondary-color-detal);
+}

@@ -1,0 +1,70 @@
+.navbar {
+  position: fixed !important;
+  top: 0px;
+  width: 100%;
+  z-index: 100;
+}
+
+.nav-link {
+  margin-left: 10px;
+  color: white !important;
+  font-size: 24px;
+  height: 60px;
+}
+.nav-link:hover {
+  text-decoration: underline;
+}
+
+/* @media only screen and (min-width: 992px) {
+  .navbar {
+    background-color: rgba(25, 25, 25, 0.6) !important;
+  }
+} */
+
+.intro-2 {
+  background: url("https://cdn-media-2.freecodecamp.org/w1280/5f9c9d0a740569d1a4ca3590.jpg")
+    no-repeat center center;
+  background-size: cover;
+  height: 500px !important;
+}
+
+.navbar {
+  background-color: transparent;
+}
+
+.top-nav-collapse {
+  background-color: #4285f4;
+}
+
+@media only screen and (max-width: 992px) {
+  .navbar {
+    background-color: #191919;
+  }
+}
+html,
+body,
+header,
+.view {
+  height: 100%;
+}
+
+.button-transparent {
+  background-color: Transparent;
+  cursor:pointer;
+}
+.icon-white {
+  color: white;
+}
+
+
+@media only screen and (min-width: 992px) {
+  .x-navbar {
+    background: transparent !important;
+    transition: 1.2s all linear;
+  }
+  .x-navbar.x-navbar-fixed-top {
+    transition: 1.2s all linear;
+    background: #191919 !important;
+  }
+}
+
