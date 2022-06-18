@@ -4,10 +4,7 @@ const mg = require("mailgun-js");
 const { PureComponent } = require("react");
 ("use strict");
 const nodemailer = require("nodemailer");
-const path = require("path");
-const bodyParser = require('body-parser');
 
-dotnev.config();
 
 //let testAccount = await nodemailer.createTestAccount();
 const transporter = nodemailer.createTransport({
@@ -25,6 +22,10 @@ const transporter = nodemailer.createTransport({
 });
 
 const app = express();
+
+dotnev.config();
+const path = require("path");
+const bodyParser = require('body-parser');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 const cors = require('cors');
