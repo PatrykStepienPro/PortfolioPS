@@ -21,6 +21,8 @@ app.get('/test', (req, res) => {
   })
 
 app.post("/api/emial", (req, res) => {
+  const { nameUser, email, subject, message } = req.body;
+  try{
     const transporter = nodemailer.createTransport({
       service: `hotmail`,
       auth: {
@@ -29,7 +31,7 @@ app.post("/api/emial", (req, res) => {
       },
     });
 
-    const { nameUser, email, subject, message } = req.body;
+
     let info = transporter.sendMail({
       from: process.env.MAILER_USER,
       to: "patrykl655@wp.pl", // list of receivers
@@ -37,7 +39,12 @@ app.post("/api/emial", (req, res) => {
       text: `${message}`, // plain text body
       html: `<p>${message} <br> My name and emails:<br> ${nameUser} <br> ${email}</p>`, // html body
     });
-
+  }catch(error){
+    if(error){
+      console.log(error);
+      res.status(500).send({message: 'Error in sending email'});
+    }
+  }
     console.log(`${nameUser} ${email} ${subject} ${message}`);
     res.send({ message: "Email sent successfully" });
 
