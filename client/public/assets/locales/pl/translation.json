@@ -23,6 +23,8 @@
     "label_content": "Treść",
     "placeholder_name": "Imie",
     "placeholder_email": "Email",
-    "placeholder_subject": "Temat"
+    "placeholder_subject": "Temat",
+    "formButtonSend": "Wyślij",
+    "formButtonSending": "Wysyłanie..."
 
 }
