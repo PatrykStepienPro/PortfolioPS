@@ -2,11 +2,49 @@ import "./Contact.css";
 import React, { Component }  from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useTranslation } from "react-i18next";
+import { useState } from "react";
+import { toast, ToastContainer }from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import axios from "axios";
 
 export default function Contact() {
   const { t } = useTranslation();
+
+  const [email, setEmail] = useState('');
+  const [name, setName] = useState('');
+  const [subject, setSubject] = useState('');
+  const [message, setMessage] = useState('');
+  const [loading, setLoading] = useState(false);
+
+  const submitHandler = async (e) => {
+    e.preventDefault();
+    if(!email || !subject || !message || !name)
+    {
+      return toast.error('Please fill name, emial, subject and message');
+    }
+    try{
+      setLoading(true);
+      const{data} = await axios.post(`/api/emial`,{
+        name,
+        email,
+        subject,
+        message
+      });
+      setLoading(false);
+      toast.success(data.message);
+    }catch(err){
+      setLoading(false);
+      toast.error(
+        err.response && err.response.data.message 
+        ? err.response.data.message
+        : err.message
+      );
+    }
+  }
+
   return (
     <div className="section-component">
+      <ToastContainer position="bottom-center"></ToastContainer>
       <div className="row row-full-width">
         <div className="col-12 d-flex justify-content-center">
           <div
@@ -19,7 +57,7 @@ export default function Contact() {
                   <b>{t('contact')}</b>
                 </h1>
                 <div className="col-6">
-                  <form>
+                  <form onSubmit={submitHandler}>
                     <div className="mb-3">
                       <label
                         htmlFor="name"
@@ -32,6 +70,7 @@ export default function Contact() {
                         type="text"
                         placeholder={`${t('placeholder_name')}`}
                         id="name"
+                        onChange={(e) => setName(e.target.value)}
                       />
                     </div>
                     <div className="mb-3">
@@ -46,6 +85,7 @@ export default function Contact() {
                         type="text"
                         placeholder={`${t('placeholder_email')}`}
                         id="email"
+                        onChange={(e) => setEmail(e.target.value)}
                       />
                     </div>
                     <div className="mb-3">
@@ -60,6 +100,7 @@ export default function Contact() {
                         type="text"
                         placeholder={`${t('placeholder_subject')}`}
                         id="subject"
+                        onChange={(e) => setSubject(e.target.value)}
                       />
                     </div>
                     <div className="mb-3">
@@ -73,8 +114,10 @@ export default function Contact() {
                         className="form-control"
                         id="content"
                         rows="3"
+                        onChange={(e) => setMessage(e.target.value)}
                       ></textarea>
                     </div>
+                    <button type="submit" disabled={loading}>{loading ? 'Sending...' : 'Submit'}</button>
                   </form>
                 </div>
               </div>
