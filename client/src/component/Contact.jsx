@@ -11,21 +11,21 @@ export default function Contact() {
   const { t } = useTranslation();
 
   const [email, setEmail] = useState('');
-  const [name, setName] = useState('');
+  const [nameUser, setnameUser] = useState('');
   const [subject, setSubject] = useState('');
   const [message, setMessage] = useState('');
   const [loading, setLoading] = useState(false);
 
   const submitHandler = async (e) => {
     e.preventDefault();
-    if(!email || !subject || !message || !name)
+    if(!email || !subject || !message || !nameUser)
     {
       return toast.error('Please fill name, emial, subject and message');
     }
     try{
       setLoading(true);
       const{data} = await axios.post(`/api/emial`,{
-        name,
+        nameUser,
         email,
         subject,
         message
@@ -69,8 +69,8 @@ export default function Contact() {
                         className="form-control"
                         type="text"
                         placeholder={`${t('placeholder_name')}`}
-                        id="name"
-                        onChange={(e) => setName(e.target.value)}
+                        id="nameUser"
+                        onChange={(e) => setnameUser(e.target.value)}
                       />
                     </div>
                     <div className="mb-3">
@@ -117,7 +117,9 @@ export default function Contact() {
                         onChange={(e) => setMessage(e.target.value)}
                       ></textarea>
                     </div>
-                    <button type="submit" disabled={loading}>{loading ? 'Sending...' : 'Submit'}</button>
+                    <div className="float-end mb-3">
+                    <button type="submit" className="btn btn-primary btn-lg" disabled={loading}>{loading ? 'Sending...' : 'Submit'}</button>
+                    </div>
                   </form>
                 </div>
               </div>

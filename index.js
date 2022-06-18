@@ -11,9 +11,8 @@ const app = express();
 
 dotnev.config();
 const path = require("path");
-const bodyParser = require('body-parser');
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.json());
+app.use(express.urlencoded({extended: true}));
 const cors = require('cors');
 app.use(cors());
 
@@ -22,7 +21,6 @@ app.get('/test', (req, res) => {
   })
 
 app.post("/api/emial", (req, res) => {
-  try {
     const transporter = nodemailer.createTransport({
       service: `hotmail`,
       auth: {
@@ -31,22 +29,18 @@ app.post("/api/emial", (req, res) => {
       },
     });
 
-    const { name, email, subject, message } = req.body;
+    const { nameUser, email, subject, message } = req.body;
     let info = transporter.sendMail({
       from: process.env.MAILER_USER,
       to: "patrykl655@wp.pl", // list of receivers
       subject: `${subject}`, // Subject line
       text: `${message}`, // plain text body
-      html: `<p>${message} <br> My name and emails:<br> ${name} <br> ${email}</p>`, // html body
+      html: `<p>${message} <br> My name and emails:<br> ${nameUser} <br> ${email}</p>`, // html body
     });
-  } catch (error) {
-    if (error) {
-      console.log(error);
-      res.status(500).send({ message: "Error in sending email" });
-    }
-  }
-  console.log(`${name} ${email} ${subject} ${message}`);
-  res.send({ message: "Email sent successfully" });
+
+    console.log(`${nameUser} ${email} ${subject} ${message}`);
+    res.send({ message: "Email sent successfully" });
+
 });
 
 app.use(express.static(path.join(__dirname, "/client/build")));
