@@ -23,7 +23,5 @@
     "label_content": "E-mail content",
     "placeholder_name": "Name",
     "placeholder_email": "E-mail",
-    "placeholder_subject": "Subject",
-    "formButtonSend": "Send",
-    "formButtonSending": "Sending..."
+    "placeholder_subject": "Subject"
 }
