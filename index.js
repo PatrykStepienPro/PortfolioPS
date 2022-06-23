@@ -38,6 +38,13 @@ app.post("/api/emial", (req, res) => {
       subject: `${subject}`, // Subject line
       text: `${message}`, // plain text body
       html: `<p>${message} <br> My name and emails:<br> ${nameUser} <br> ${email}</p>`, // html body
+    }, function(err, info) {
+      if (err) {
+        console.log("Error sending message: " + err);
+      } else {
+        // no errors, it worked
+        console.log("Message sent succesfully.");
+      }
     });
   }catch(error){
     if(error){
