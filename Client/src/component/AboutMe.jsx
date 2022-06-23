@@ -24,27 +24,33 @@ export default function AboutMe() {
     if (actualTab === "tab-1-skils") {
       return (
         <div>
-          <p>
-            {t('ability_content')}
-          </p>
+          <h5>{t('ability1')}</h5>
+          <h5>{t('ability2')}</h5>
+          <h5>{t('ability3')}</h5>
+          <h5>{t('ability4')}</h5>
+          <h5>{t('ability5')}</h5>
         </div>
       );
     }
     if (actualTab === "tab-2-work") {
       return (
         <div>
-          <p>
-            {t('experience_content')}
-          </p>
+          <h4><b>{t('experiance_company1')}</b></h4>
+          <h5>{t('experiance_company1_dat')}</h5>
+          <p>{t('experiance_company1_desc')}</p>
+          <h4><b>{t('experiance_company2')}</b></h4>
+          <h5>{t('experiance_company2_dat')}</h5>
+          <p>{t('experiance_company2_desc')}</p>
         </div>
       );
     }
     if (actualTab === "tab-3-education") {
       return (
         <div>
-          <p>
-            {t('education_content')}
-          </p>
+          <h4><b>{t('education_hight_school')}</b></h4>
+          <h5>{t('education_hight_school_date')}</h5>
+          <h4><b>{t('education_sggw')}</b></h4>
+          <h5>{t('education_sggw_date')}</h5>
         </div>
       );
     }
@@ -70,7 +76,7 @@ export default function AboutMe() {
             <p>
               {t('about_me_content')}
             </p>
-            <ul className="nav justify-content-start ul-about-me mt-5 mb-3 ">
+            <ul className="nav justify-content-start ul-about-me mt-5 mb-4">
               <li
                 className="tab-dark active-tab-link"
                 id="tab-1-skils"
