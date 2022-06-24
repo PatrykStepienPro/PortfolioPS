@@ -56,7 +56,7 @@ export default function Contact() {
                 <h1 className="color-font-white text-center d-flex justify-content-center">
                   <b>{t('contact')}</b>
                 </h1>
-                <div className="col-6">
+                <div className="col-12 col-lg-6">
                   <form onSubmit={submitHandler}>
                     <div className="mb-3">
                       <label
